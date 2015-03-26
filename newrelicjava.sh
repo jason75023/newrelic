@@ -1,10 +1,13 @@
 #!/bin/bash
 #
-#To install new relic java agent on ir1/ir2/ir3
-#usage: ./newrelicjava.sh  
+# prupose:To install/uninstall new relic java agent on ir1/ir2/ir3
+# usage:
+# 1. login to server
+# 2. bash <(wget -qO - https://raw.githubusercontent.com/jason75023/newrelic-server/master/newrelicjava.sh)
 #       To install java agent: 1, 3, 4, 5
 #       To uninstall java agent: 2, 3, 4, 5
 #       select 6 to exit program  
+#
 install() {
 #cd tomcat(CATALINA_HOME) directory
 cd  /mnt/apache-tomcat-7.0.52/
