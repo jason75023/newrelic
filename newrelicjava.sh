@@ -18,8 +18,11 @@ wget http://yum.newrelic.com/newrelic/java-agent/newrelic-agent/current/newrelic
 #unzip 
 unzip newrelic-java-3.8.2.zip
 
-#Update newrelic config file 
+#install newrelic java agent
 cd /mnt/apache-tomcat-7.0.52/newrelic
+/mnt/jdk1.7.0_51/bin/java -jar newrelic.jar install 
+
+#Update newrelic config file 
 sed -i.old '/^  app_name: My.*[^)]$/s/[ ]*\([^ ]*\)[ ]\([^ ]*[ ][^ ]*\)/\1 IR API(ewr2)/' newrelic.yml
 echo "*** verify config file update ***"
 diff newrelic.yml newrelic.yml.old
