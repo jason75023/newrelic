@@ -29,6 +29,7 @@ sed -i.old -e '/^  app_name: My.*[^)]$/s/[ ]*\([^ ]*\)[ ]\([^ ]*[ ][^ ]*\)/\1 IR
 echo "*** verify config file update ***"
 diff newrelic.yml newrelic.yml.old
 
+return
 }
 
 uninstall() {
@@ -41,6 +42,7 @@ cd /mnt/apache-tomcat-7.0.52/bin
 sed -i.`date +%Y%m%d`  '/New Relic/{N;N;s/^/#/gm }' catalina.sh
 diff catalina.sh catalina.sh.`date +%Y%m%d`
 
+return
 }
 
 stopjava() {
@@ -48,6 +50,8 @@ stopjava() {
 su - tomcat 
 cd /mnt/tomcat/ir-api
 startup.sh stop
+
+return
 }
 
 startjava() {
@@ -55,10 +59,14 @@ startjava() {
 su - tomcat 
 cd /mnt/tomcat/ir-api
 startup.sh start 
+
+return
 }
 
 checkjava() {
 ps -ef | grep [t]omcat 
+
+return
 }
 
 
