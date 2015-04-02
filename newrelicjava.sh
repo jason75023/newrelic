@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# prupose:To install/uninstall new relic java agent on ir1/ir2/ir3
+# prupose:To install/uninstall new relic java agent on Locus-IR: ir1/ir2/ir3 VMs
 # usage:
 # 1. login to server
 # 2. bash <(wget -qO - https://raw.githubusercontent.com/jason75023/newrelic-server/master/newrelicjava.sh)
