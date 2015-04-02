@@ -47,18 +47,14 @@ return
 
 stopjava() {
 #stop tomcat java process
-su - tomcat 
-cd /mnt/tomcat/ir-api
-startup.sh stop
+su - tomcat -c "/mnt/tomcat/ir-api/startup.sh stop"
 
 return
 }
 
 startjava() {
 #start tomcat java process
-su - tomcat 
-cd /mnt/tomcat/ir-api
-startup.sh start 
+su - tomcat -c "/mnt/tomcat/ir-api/startup.sh start"
 
 return
 }
