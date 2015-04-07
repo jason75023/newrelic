@@ -26,10 +26,17 @@ cd /mnt/apache-tomcat-7.0.52/newrelic
 #license="1385436c45c570cb5e1ec46664b06adb03748bde"
 #app="IR API(ewr2)"
 
-echo -n "Please enter license: "
+echo -n "Please enter license:<hit enter to take default value>"
 read license
-echo -n "Please enter app name: "
+#using and setting default value for license 
+echo "Your license is : ${license:=1385436c45c570cb5e1ec46664b06adb03748bde}"
+
+echo -n "Please enter app name:<hit enter to take default value>"
 read app
+#using and setting default value for app 
+echo "Your app is : ${app:=IR API(ewr2)}"
+
+#Update newrelic config file
 sed -i.old -e "/^  app_name: My.*[^)]$/s/My Application/$app/" -e '/license_key:.*license_key/s/<%= license_key %>/$license/' newrelic.yml
 
 echo "*** verify config file update ***"
