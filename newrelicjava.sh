@@ -23,8 +23,14 @@ cd /mnt/apache-tomcat-7.0.52/newrelic
 /mnt/jdk1.7.0_51/bin/java -jar newrelic.jar install 
 
 #Update newrelic config file 
-sed -i.old -e '/^  app_name: My.*[^)]$/s/My Application/IR API(ewr2)/' -e '/license_key:.*license_key/s/<%= license_key %>/1385436c45c570cb5e1ec46664b06adb03748bde/' newrelic.yml
+#license="1385436c45c570cb5e1ec46664b06adb03748bde"
+#app="IR API(ewr2)"
 
+echo -n "Please enter license: "
+read license
+echo -n "Please enter app name: "
+read app
+sed -i.old -e "/^  app_name: My.*[^)]$/s/My Application/$app/" -e '/license_key:.*license_key/s/<%= license_key %>/$license/' newrelic.yml
 
 echo "*** verify config file update ***"
 diff newrelic.yml newrelic.yml.old
