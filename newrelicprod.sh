@@ -2,7 +2,7 @@
 #
 # prupose:To install/uninstall new relic server agent on Locus-IR: ir1/ir2/ir3 VMs
 # usage:
-# 1. login to server
+# 1. login to server as root user 
 # 2. bash <(wget -qO - https://raw.githubusercontent.com/jason75023/newrelic-server/master/newrelicprod.sh)
 # To install new relic server agent: 1, 5, 6
 # To uninstall new relic server agent: 3, 2, 5, 6
